@@ -23,3 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(updateTimer, 1000);
 });
+
+document.getElementById('inr-dropdown').addEventListener('click', () => {
+    document.getElementById('inr-menu').classList.toggle('show');
+});
+
+document.getElementById('btc-dropdown').addEventListener('click', () => {
+    document.getElementById('btc-menu').classList.toggle('show');
+});
