@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HodIInfo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body class="bg-[#191d28] text-[#7be0db] px-10">
+    <div class="header flex flex-col gap-3 md:flex-row items-center justify-between text-white pt-5">
+        <div class="w-56">
+            <img src="/images/HODLINFO.8f78fc06.png" alt="HODLINFO Logo" class="w-full">
+        </div>
+        <div class="flex gap-2 relative">
+            <div class="relative">
+                <button id="inr-dropdown"
+                    class="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">INR <img
+                        src="/images/arrow-down-filled-triangle-svgrepo-com.svg" alt="" class="w-2"></button>
+                <div id="inr-menu" class="absolute bg-white text-black rounded shadow-lg dropdown-menu">
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 1</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 2</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 3</div>
+                </div>
+            </div>
+            <div class="relative">
+                <button id="btc-dropdown"
+                    class="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">BTC<img
+                        src="/images/arrow-down-filled-triangle-svgrepo-com.svg" alt="" class="w-2"></button>
+                <div id="btc-menu" class="absolute bg-white text-black rounded shadow-lg dropdown-menu">
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option A</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option B</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option C</div>
+                </div>
+            </div>
+            <button class="px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">BUY BTC</button>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative w-12 h-12 flex items-center justify-center">
+                <div class="absolute text-[#3dc6c1] text-sm font-bold" id="timer">35</div>
+                <svg class="absolute w-full h-full transform -rotate-90">
+                    <circle class="text-gray-300" stroke-width="3" stroke="currentColor" fill="transparent" r="18" cx="24" cy="24" />
+                    <circle id="progress-circle" class="text-[#3dc6c1]" stroke-width="3" stroke-linecap="round"
+                        stroke="currentColor" fill="transparent" r="18" cx="24" cy="24" stroke-dasharray="113"
+                        stroke-dashoffset="0" />
+                </svg>
+            </div>            
+            <button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-[#3dc6c1] text-white text-sm">
+                <img src="/images/4375108_logo_telegram_icon.svg" alt="" class="w-5">Connect Telegram
+            </button>
+            <div class="w-14 h-8 p-1 rounded-full bg-gray-600 cursor-pointer flex justify-end">
+                <div class="bg-[#3dc6c1] w-6 h-6 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-gray-500 text-xl text-center mt-4">Best Price to Trade</p>
+
+    <!-- Stats Section -->
+    <div class="stats-section flex flex-wrap gap-2 sm:gap-0 justify-around text-center my-3 text-white">
+        <div>
+            <h3 class="text-xl text-[#3dc6c1] font-semibold">0.1%</h3>
+            <p class="text-gray-500">5 Mins</p>
+        </div>
+        <div>
+            <h3 class="text-xl text-[#3dc6c1] font-semibold">0.96%</h3>
+            <p class="text-gray-500">1 Hour</p>
+        </div>
+        <div>
+            <h3 class="text-5xl">₹ 26,56,110</h3>
+            <p class="text-gray-500 text-sm mt-3">Average BTC/INR net price including commission</p>
+        </div>
+        <div>
+            <h3 class="text-xl text-[#3dc6c1] font-semibold">2.73%</h3>
+            <p class="text-gray-500">1 Day</p>
+        </div>
+        <div>
+            <h3 class="text-xl text-[#3dc6c1] font-semibold">7.51%</h3>
+            <p class="text-gray-500">7 Days</p>
+        </div>
+    </div>
+
+    <!-- Platform Table -->
+    <div class="overflow-x-auto"> <!-- Added overflow-x-auto for horizontal scrolling -->
+        <table class="w-full text-center table-auto min-w-[600px] border-separate" style="border-spacing: 0 10px;">
+            <!-- Added border-spacing to keep row spacing -->
+            <thead class="text-gray-500">
+                <tr>
+                    <th class="py-2">#</th>
+                    <th>Platform</th>
+                    <th>Last Traded Price</th>
+                    <th>Buy / Sell Price</th>
+                    <th>Difference</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody class="text-white">
+                <tr class="bg-[#232834] rounded-lg overflow-hidden">
+                    <td class="rounded-l-lg px-4 py-4">1</td>
+                    <td class="flex items-center justify-center gap-2 py-4">
+                        <img src="/images/wazirx-svgrepo-com.svg" alt="WazirX Icon" class="w-6 h-6">
+                        WazirX
+                    </td>
+                    <td>₹ 25,72,612</td>
+                    <td>₹ 25,72,610 / ₹ 25,72,612</td>
+                    <td class="text-red-500">&#9660;-3.14%</td>
+                    <td class="text-red-500 rounded-r-lg">&#9660; ₹83,498</td>
+                </tr>
+                <tr class="bg-[#232834] rounded-lg overflow-hidden">
+                    <td class="px-4 py-4 rounded-l-lg">2</td>
+                    <td class="flex items-center justify-center gap-2 py-4">
+                        <img src="/images/bitbns-seeklogo.svg" alt="Bitbns Icon" class="w-6 h-6">
+                        Bitbns
+                    </td>
+                    <td>₹ 28,83,906</td>
+                    <td>₹ 28,55,164 / ₹ 28,82,157</td>
+                    <td class="text-[#3dc6c1]">&#9650;+8.58%</td> <!-- Custom green shade -->
+                    <td class="text-[#3dc6c1] rounded-r-lg">&#9650; ₹2,27,796</td> <!-- Custom green shade -->
+                </tr>
+                <tr class="bg-[#232834] rounded-lg overflow-hidden">
+                    <td class="px-4 py-4 rounded-l-lg">3</td>
+                    <td class="flex items-center justify-center gap-2 py-4">
+                        <img src="/images/colodax.svg" alt="Colodax Icon" class="w-6 h-6">
+                        Colodax
+                    </td>
+                    <td>₹ 25,46,035</td>
+                    <td>₹ 25,33,304 / ₹ 28,51,559</td>
+                    <td class="text-red-500">&#9660;-4.14%</td>
+                    <td class="text-red-500 rounded-r-lg">&#9660; ₹1,10,074</td>
+                </tr>
+                <tr class="bg-[#232834] rounded-lg overflow-hidden">
+                    <td class="px-4 py-4 rounded-l-lg">4</td>
+                    <td class="flex items-center justify-center gap-2 py-4">
+                        <img src="/images/simple-icons--zebpay.svg" alt="Zebpay Icon" class="w-6 h-6">
+                        Zebpay
+                    </td>
+                    <td>₹ 26,50,000</td>
+                    <td>₹ 26,49,999 / ₹ 26,21,000</td>
+                    <td class="text-red-500">&#9660;-0.23%</td>
+                    <td class="text-red-500 rounded-r-lg">&#9660; ₹6,110</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="text-center">
+        <a href="/get-wazirx-data" class="text-[#3dc6c1] border border-[#3dc6c1] rounded-md px-1.5 py-1">Get Link of
+            Data</a>
+    </div>
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>

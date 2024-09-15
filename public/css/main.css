@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Oswald';
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#progress-circle {
+    transition: stroke-dashoffset 1s linear;
+}

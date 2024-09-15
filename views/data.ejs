@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HodIInfo</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+<body class="bg-[#191d28] text-[#7be0db] px-10">
+    <!-- Header Section -->
+    <div class="header flex flex-col gap-3 md:flex-row items-center justify-between text-white pt-5">
+        <div class="w-56">
+            <img src="/images/HODLINFO.8f78fc06.png" alt="HODLINFO Logo" class="w-full">
+        </div>
+        <div class="flex gap-2 relative">
+            <!-- Dropdown for INR -->
+            <div class="relative">
+                <button id="inr-dropdown" class="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">INR <img src="/images/arrow-down-filled-triangle-svgrepo-com.svg" alt="" class="w-2"></button>
+                <div id="inr-menu" class="absolute bg-white text-black rounded shadow-lg dropdown-menu">
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 1</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 2</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option 3</div>
+                </div>
+            </div>
+            <!-- Dropdown for BTC -->
+            <div class="relative">
+                <button id="btc-dropdown" class="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">BTC<img src="/images/arrow-down-filled-triangle-svgrepo-com.svg" alt="" class="w-2"></button>
+                <div id="btc-menu" class="absolute bg-white text-black rounded shadow-lg dropdown-menu">
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option A</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option B</div>
+                    <div class="px-4 py-2 cursor-pointer hover:bg-gray-200">Option C</div>
+                </div>
+            </div>
+            <button class="px-3 py-2 bg-gray-700 text-white rounded-xl text-sm">BUY BTC</button>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative w-12 h-12 flex items-center justify-center">
+                <div class="absolute text-[#3dc6c1] text-sm font-bold" id="timer">35</div>
+                <svg class="absolute w-full h-full transform -rotate-90">
+                    <circle class="text-gray-300" stroke-width="3" stroke="currentColor" fill="transparent" r="18" cx="24" cy="24" />
+                    <circle id="progress-circle" class="text-[#3dc6c1]" stroke-width="3" stroke-linecap="round"
+                        stroke="currentColor" fill="transparent" r="18" cx="24" cy="24" stroke-dasharray="113"
+                        stroke-dashoffset="0" />
+                </svg>
+            </div>             
+            <button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-[#3dc6c1] text-white text-sm"><img src="/images/4375108_logo_telegram_icon.svg" alt="" class="w-5">Connect Telegram</button>
+            <div class="w-14 h-8 p-1 rounded-full bg-gray-600 cursor-pointer flex justify-end">
+                <div class="bg-[#3dc6c1] w-6 h-6 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 overflow-x-auto">
+        <h1 class="text-2xl font-bold text-white mb-4 flex items-center gap-2"><img src="/images/wazirx-svgrepo-com.svg" class="w-6">WazirX / Top 10</h1>
+        <table class="w-full min-w-[600px] text-center table-auto border-separate" style="border-spacing: 0 10px;">
+            <thead class="text-gray-500">
+                <tr>
+                    <th class="py-2 px-4">Name</th>
+                    <th class="py-2 px-4">Last</th>
+                    <th class="py-2 px-4">Buy</th>
+                    <th class="py-2 px-4">Sell</th>
+                    <th class="py-2 px-4">Volume</th>
+                    <th class="py-2 px-4">Base Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% tickers.forEach(ticker => { %>
+                    <tr class="bg-[#232834] text-white rounded-lg overflow-hidden">
+                        <td class="py-4 px-4 rounded-l-lg"><%= ticker.name %></td>
+                        <td class="py-4 px-4"><%= ticker.last %></td>
+                        <td class="py-4 px-4"><%= ticker.buy %></td>
+                        <td class="py-4 px-4"><%= ticker.sell %></td>
+                        <td class="py-4 px-4"><%= ticker.volume %></td>
+                        <td class="py-4 px-4 rounded-r-lg"><%= ticker.base_unit %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>
